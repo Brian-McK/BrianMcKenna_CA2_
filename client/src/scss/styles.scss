@@ -1,0 +1,88 @@
+$base-colour: #25564c;
+$base2-colour: #3e907f;
+$complimentBase-colour: #56252f;
+
+.DisplayMovieRecordsStyle {
+	margin: 40px;
+	text-align: -webkit-center;
+}
+
+.InputBoxesStyle {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	margin: 20px;
+}
+
+#myTable {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+
+	td,
+	th {
+		padding: 12px;
+		text-align: center;
+		font-size: 16px;
+	}
+	th {
+		background-color: $base-colour;
+		color: white;
+		font-size: 18px;
+	}
+	tbody tr:nth-child(even) {
+		background-color: rgb(233, 233, 233);
+	}
+	tbody tr:nth-child(odd) {
+		background-color: rgb(215, 215, 215);
+	}
+}
+
+@media (max-width: 650px) {
+	#myTable thead {
+		display: none;
+	}
+	#myTable,
+	#myTable tbody,
+	#myTable tr,
+	#myTable td {
+		display: block;
+		width: 100%;
+	}
+	#myTable tr {
+		margin-bottom: 15px;
+	}
+	#myTable td {
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	#myTable td::before {
+		content: attr(data-label);
+		position: absolute;
+		left: 0;
+		width: 50%;
+		padding-left: 15px;
+		font-size: 15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
+.faIconsHover {
+	&:hover {
+		color: $base2-colour;
+	}
+}
+
+.tableSortIcons {
+	margin-left: 10px;
+
+	&:hover {
+		color: white;
+	}
+}
